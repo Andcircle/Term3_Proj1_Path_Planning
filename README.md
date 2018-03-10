@@ -46,7 +46,18 @@ Then the simple behavior planning works as following:
 
 ## Trajectory Calculation
 
-If 
+In the map data, there is huge interval between way points, that's why, even for just following the road without changing lanes, we still need a curve fitting or interpolation tool, here we use the spline interpolation tool. 
+
+After behavior plan, we got target speed and target lane, then we use last 2 points of previous planned path, and another 2~3 points in target lane with the same relatively large distance interval, to generate the spline curve. This curve already take changing lane into consideration. 
+
+To be noted: only the last one point of previous path is not enough, because previous path will not get enough weigts, when chaning lanes, the new spline curve will change direction abruptly.
+
+With target speed and stored current speed, we can calculate all the x value of path points in car local coordinates, then use existed spline curve for interpolation to get y value. After that, all this path points can be transferred to global coordinates and send to simulator.
+
+To be noted:
+1. Acceleration limit should be taken into consideration.
+2. According to experiments, the simulator can only take 2~3 path points in every loop, so the car_speed should not be used to update speed in next loop, instead, the speed of last point in previous path has to be stored for this purpose.
+3. GetFrenet and GetXY is just a high level approximation, given x, y, after GetFrenet and then GetXY, the value will be completely different, so certain logic can not be used.
 
 
 ## How to run the code
