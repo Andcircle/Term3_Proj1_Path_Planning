@@ -58,7 +58,7 @@ After behavior plan, we got target speed and target lane, then we use last 2 poi
 
 To be noted: only the last one point of previous path is not enough, because previous path will not get enough weights, when changing lanes, the new spline curve will change direction abruptly.
 
-With target speed and stored current speed, we can calculate all the x value of the path points in car local coordinates, then use existed spline curve for interpolation to get y value. After that, all this path points can be transferred to global coordinates and send to simulator.
+With target speed and stored current speed, we can calculate all the x value of the path points in car local coordinates, then use existed spline curve for interpolation to get y value. After that, all these path points can be transferred to global coordinates and send to simulator.
 
 To be noted:
 1. Acceleration limit should be taken into consideration.
