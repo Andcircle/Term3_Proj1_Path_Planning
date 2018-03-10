@@ -56,7 +56,7 @@ In the map data, there is huge interval between way points, that's why, even for
 
 After behavior plan, we got target speed and target lane, then we use last 2 points of previous planned path, and another 2~3 points in target lane with the same relatively large distance interval, to generate the spline curve. This curve already take changing lane into consideration. 
 
-To be noted: only the last one point of previous path is not enough, because previous path will not get enough weigts, when chaning lanes, the new spline curve will change direction abruptly.
+To be noted: only the last one point of previous path is not enough, because previous path will not get enough weigts, when changing lanes, the new spline curve will change direction abruptly.
 
 With target speed and stored current speed, we can calculate all the x value of path points in car local coordinates, then use existed spline curve for interpolation to get y value. After that, all this path points can be transferred to global coordinates and send to simulator.
 
