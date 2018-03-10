@@ -17,11 +17,11 @@ The behavior planner is impemented in Trajectory::behavior_plan function.
 
 First, it will analysis the environment:
 
-if there is no car in certain range ahead of current lane, then front clear
+If there is no car in certain range ahead of current lane, then front clear
 
-if in left lane, there is no car within certain range both before and after current car's longitudinal postion, then left clear.
+If in left lane, there is no car within certain range both before and after current car's longitudinal postion, then left clear.
 
-if in right lane, there is no car within certain range both before and after current car's longitudinal postion, then left clear.
+If in right lane, there is no car within certain range both before and after current car's longitudinal postion, then left clear.
 
 
 Then the simple behavior planning works as following:
