@@ -21,7 +21,7 @@ If there is no car in certain range ahead of current lane, then front clear
 
 If in left lane, there is no car within certain range both before and after current car's longitudinal postion, then left clear.
 
-If in right lane, there is no car within certain range both before and after current car's longitudinal postion, then left clear.
+If in right lane, there is no car within certain range both before and after current car's longitudinal postion, then right clear.
 
 
 Then the simple behavior planning works as following:
